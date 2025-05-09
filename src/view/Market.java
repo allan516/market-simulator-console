@@ -9,6 +9,7 @@ public class Market {
     private static Scanner keyboard = new Scanner(System.in);
     private static ArrayList<Product> products;
     private static Map<Product, Integer> shoppingCart;
+
     public static void main(String[] args) {
         products = new ArrayList<Product>();
         shoppingCart = new HashMap<Product, Integer>();
@@ -123,6 +124,7 @@ public class Market {
                     System.out.println("O produto " + p.getName() + " foi adicionado ao carrinho.");
                     has = true;
                 }
+            }
                 if (has) {
                     System.out.println("Deseja adicionar outros produtos ao carrinho? ");
                     System.out.println("Informe 1 para sim e 0 para não: ");
@@ -138,9 +140,9 @@ public class Market {
                 } else {
                     System.out.println("Não foi encontrado o produto com o código " + code);
                     Utils.stop(2);
-                    Market.menu();
+                    Market.buyProduct();
                 }
-            }
+
         } else {
             System.out.println("Ainda não existe produto cadastrado no mercado.");
             Utils.stop(2);
